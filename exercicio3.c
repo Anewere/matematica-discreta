@@ -17,5 +17,12 @@ int main() {
     array_exibe(par_ordenado, tam_par);
     array_exibe_par_ordenado(par_ordenado, tam_par);
 
+    //relfexiva, simetrica, antissimétrica, transitiva
+
+    int a[3] = {1, 2, 3};
+    int b[2] = {2, 5};
+    array_x_menos_y(a, 3, b, 2);
+    array_exibe(a, 3);
+
     return 0;
 }

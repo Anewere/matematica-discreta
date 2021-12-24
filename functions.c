@@ -33,10 +33,12 @@ void array_exibe(int array[], int tam_array) {
     */
     printf("{");
     for (int i = 0; i < tam_array; i++) {
-        if (i < tam_array - 1) {
-            printf("%d, ", array[i]);
-        } else {
-            printf("%d}\n", array[i]);
+        if (array[i] != 999) {
+            if (i < tam_array - 1) {
+                printf("%d, ", array[i]);
+            } else {
+                printf("%d}\n", array[i]);
+            }
         }
     }
 }
@@ -93,10 +95,24 @@ void array_exibe_par_ordenado(int array[], int tam_array) {
     */
     printf("{");
     for (int i = 0; i < tam_array; i += 2) {
-        if (i < tam_array - 2) {
-            printf("(%d, %d), ", array[i], array[i + 1]);
-        } else {
-            printf("(%d, %d)}\n", array[i], array[i + 1]);
+        if (array[i] != 999) {
+            if (i < tam_array - 2) {
+                printf("(%d, %d), ", array[i], array[i + 1]);
+            } else {
+                printf("(%d, %d)}\n", array[i], array[i + 1]);
+            }
+        }
+    }
+}
+
+//
+void array_x_menos_y(int array_x[], int tam_x, int array_y[], int tam_y) {
+    //compara os elementos dos conjuntos x e y para remover de X os elementos
+    for (int x = 0; x < tam_x; x++) {
+        for (int y = 0; y < tam_y; y++) {
+            if ((array_x[x] == array_y[y])) {
+                array_x[x] = 999;
+            }
         }
     }
 }
