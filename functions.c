@@ -80,3 +80,20 @@ bool array_x_contido_y(int array_x[], int tam_x, int array_y[], int tam_y) {
     }
     return contido;
 }
+
+//exibe um array em formato de conjunto. Ex.: {0, 1, 2 ,3} -> {(0, 1), (2, 3)}
+void array_exibe_par_ordenado(int array[], int tam_array) {
+    /** 
+     * @param array o array que erá recebido
+     * @param tam_array tamanho do array que será verificado. Ex.: se tam_array = 2  {?, ?}
+    */
+    printf("{");
+    for (int i = 0; i < tam_array; i += 2) {
+        if (i < tam_array - 2) {
+            printf("(%d, %d)", array[i], array[i + 1]);
+        } else {
+            printf("(%d, %d)", array[i], array[i + 1]);
+        }
+    }
+    printf("}\n");
+}
