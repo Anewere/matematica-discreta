@@ -8,7 +8,7 @@
 
 int main() {
     srand(time(NULL));
-    int i, j;
+    int i;
     int conjunto_a[tam_a], conjunto_b[tam_b];
 
     //preenche o conjunto_a com numeros para que tenha cardinalidade 20
@@ -21,8 +21,6 @@ int main() {
             conjunto_a[i] = elemento_de_a;
         }
     }
-    //exibe conjunto_a
-    array_exibe(conjunto_a, tam_a);
 
     //preenche o conjunto_b com numeros para que tenha cardinalidade 5
     for (i = 0; i < tam_b; i++) {
@@ -34,8 +32,15 @@ int main() {
             conjunto_b[i] = elemento_de_b;
         }
     }
-    //exibe conjunto_b
-    printf("\n");
+
+    //ordena conjuntos A e B
+    array_ordena(conjunto_a, tam_a);
+    array_ordena(conjunto_b, tam_b);
+
+    //exibe conjuntos A e B
+    printf("conjunto A: ");
+    array_exibe(conjunto_a, tam_a);
+    printf("conjunto B: ");
     array_exibe(conjunto_b, tam_b);
 
     return 0;
