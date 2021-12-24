@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#define tam_a 20
-#define tam_b 5
+#define tam_a 40
+#define tam_b 3
 #include "functions.c"
 #include <stdbool.h>
 
@@ -42,6 +42,12 @@ int main() {
     array_exibe(conjunto_a, tam_a);
     printf("conjunto B: ");
     array_exibe(conjunto_b, tam_b);
+
+    if (array_x_contido_y(conjunto_b, tam_b, conjunto_a, tam_a)) {
+        printf("O Conjunto B está contido em A\n");
+    } else {
+        printf("O Conjunto B não está contido em A\n");
+    }
 
     return 0;
 }

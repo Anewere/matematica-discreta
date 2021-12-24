@@ -39,7 +39,7 @@ void array_exibe(int array[], int tam_array) {
 
 //ordena um array de forma que ele fique crescente
 void array_ordena(int array[], int tam_array) {
-    /** EXCLUIR NO FINAL ESSE COMENTARIO
+    /**
      * @param array o array que erá recebido
      * @param tam_array tamanho do array que será verificado. Ex.: se tam_array = 2  {?, ?}
     */
@@ -61,4 +61,22 @@ void array_ordena(int array[], int tam_array) {
             array[j] = max;
         }
     }
+}
+
+//verifica se o conjunto x ⊆ y
+bool array_x_contido_y(int array_x[], int tam_x, int array_y[], int tam_y) {
+    bool contido = false;
+
+    //compara os elementos dos conjuntos x e y para ver se todos os elementos de x existem em y
+    for (int x = 0; x < tam_x; x++) {
+        for (int y = 0; y < tam_y; y++) {
+            if ((array_x[x] == array_y[y])) {
+                contido = true;
+                break;
+            } else if (y == (tam_y - 1)) {
+                return false;
+            }
+        }
+    }
+    return contido;
 }
