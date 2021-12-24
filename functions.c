@@ -31,10 +31,14 @@ void array_exibe(int array[], int tam_array) {
      * @param array o array que erá recebido
      * @param tam_array tamanho do array que será verificado. Ex.: se tam_array = 2  {?, ?}
     */
+    printf("{");
     for (int i = 0; i < tam_array; i++) {
-        printf("%d ", array[i]);
+        if (i < tam_array - 1) {
+            printf("%d, ", array[i]);
+        } else {
+            printf("%d}\n", array[i]);
+        }
     }
-    printf("\n");
 }
 
 //ordena um array de forma que ele fique crescente
@@ -90,10 +94,9 @@ void array_exibe_par_ordenado(int array[], int tam_array) {
     printf("{");
     for (int i = 0; i < tam_array; i += 2) {
         if (i < tam_array - 2) {
-            printf("(%d, %d)", array[i], array[i + 1]);
+            printf("(%d, %d), ", array[i], array[i + 1]);
         } else {
-            printf("(%d, %d)", array[i], array[i + 1]);
+            printf("(%d, %d)}\n", array[i], array[i + 1]);
         }
     }
-    printf("}\n");
 }
