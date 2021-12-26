@@ -105,7 +105,7 @@ void array_exibe_par_ordenado(int array[], int tam_array) {
     }
 }
 
-//
+//faz a operação de conjunto no formato X-Y
 void array_x_menos_y(int array_x[], int tam_x, int array_y[], int tam_y) {
     //compara os elementos dos conjuntos x e y para remover de X os elementos
     for (int x = 0; x < tam_x; x++) {
@@ -115,4 +115,38 @@ void array_x_menos_y(int array_x[], int tam_x, int array_y[], int tam_y) {
             }
         }
     }
+}
+
+//verifica se o par ordenado (a, b) está presente no array[] = {(?, ?), (?, ?), (?, ?)}
+bool array_busca_par_ordenado(int a, int b, int array[], int tam_array) {
+    for (int i = 0; i < tam_array; i += 2) {
+        if (a == array[i] && b == array[i + 1]) {
+            return true;
+        }
+    }
+    return false;
+}
+
+//verifica se existe um par ordenado (a, b) em um array de pares ordenados, retorna true se existe, false se não existe
+bool array_elemento_par_ordenado(int a, int b, int array[], int tam_array) {
+    /** 
+     * @param a (a, ?) elemento a que será buscado;
+     * @param b (?, b) elemento b que será buscado;
+     * @param array array com os elementos do conjunto
+     * @param tam_array numero de elementos de array[]
+    */
+
+    //armazena se há elementos repetidos no conjunto
+    bool repetido;
+
+    //verifica se há elementos repetidos no conjunto
+    for (int i = 0; i <= tam_array - 1; i += 2) {
+        if (array[i] == a && array[i + 1] == b) {
+            repetido = true;
+            break;
+        } else {
+            repetido = false;
+        }
+    }
+    return repetido;
 }
